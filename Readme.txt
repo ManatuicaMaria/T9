@@ -1,0 +1,10 @@
+Manatuica Maria 313CA
+
+    Pentru a rezolva cerintele temei am ales sa implementez un trie pentru cifrele de la 2 la 9, care are ca noduri treap-uri de cuvinte ce pot fi formate cu combinatia de cifre, si un vector de fii, trie-uri pentru cifrele urmatoare.
+    Ca si chei ale treap-ului am folosit structura nod cu doua atribute: word, care este de tip string si retine cuvantul, iar nr_ap, un int ce retine numarul de aparitii ale cuvantului in dictionar. Pentru a putea folosi acest tip de date in treap am supraincarcat operatorii relationali <,> si ==.
+    
+    Clasa Trie are ca si metode insert, findK si erase. Insert insereaza cheia key cu prioritatea priority in treap-ul corespunzator combinatiei de cifre primita prin vectorul indici. FindK returneaza a k-a cheie de la sfarsit la inceput a treap-ului corespunzator combinatiei de cifre primita prin parametrul vector de indici. Erase sterge cheia key din treap-ul corespunzator combinatiei de cifre primita prin vectorul de indici.
+    
+    Clasa Treap are ca si metode metodele caracteristice unei structuri de date treap: insert, erase, rotateRight, rotateLeft, erase, find, findK, isNil, addData, delData. Scheletul de cod este cel din laboratorul 11. Singura diferenta este functia findK care intoarce a k-a cheie din treap in ordine descrescatoare.
+
+    In main, folosind tipurile de date prezentate mai sus, am implementat dictionarul T9 astfel: citesc din fisierul date.in lista de cuvinte de care dispune softul si le retin in trie-ul dictionar cum am descris mai sus, dupa care citesc combinatiile de cifre urmate sau nu de un numar de ordine pe baza carora voi scrie in fisierul date.out cuvintele corespunzatoare. Pentru fiecare combinatie de taste calculez numarul de ordine ( in functie de ce caractere este urmata combinatia de cifre sau nu ), gasesc cuvantul cu functia findK a trie-ului, il scriu in fisierul de output, il sterg din dictionar, incrementez numarul de aparitii ale acestuia si il inserez din nou in dictionar.
